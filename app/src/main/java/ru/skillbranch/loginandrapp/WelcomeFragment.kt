@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 
+@Suppress("DEPRECATION")
 class WelcomeFragment : Fragment() {
 
     companion object {
@@ -26,6 +28,13 @@ class WelcomeFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(WelcomeViewModel::class.java)
         // TODO: Use the ViewModel
+    }
+
+    override fun onStart() {
+        super.onStart()
+        view?.findViewById<Button>(R.id.btn_sing_out)?.setOnClickListener{
+            (activity as MainActivity).navController.navigate(R.id.action_welcomeFragment_to_loginFragment)
+        }
     }
 
 }

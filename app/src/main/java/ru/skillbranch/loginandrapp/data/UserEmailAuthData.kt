@@ -1,6 +1,6 @@
 package ru.skillbranch.loginandrapp.data
 
-data class EmailUserSignInRequestData(
+data class UserEmailAuthData (
     val email: String,
     val password: String
-) : UserRequestData()
+)

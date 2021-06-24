@@ -32,7 +32,7 @@ class WelcomeFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        view?.findViewById<Button>(R.id.btn_sing_out)?.setOnClickListener{
+        view?.findViewById<Button>(R.id.btn_sign_out)?.setOnClickListener{
             (activity as MainActivity).navController.navigate(R.id.action_welcomeFragment_to_loginFragment)
         }
     }

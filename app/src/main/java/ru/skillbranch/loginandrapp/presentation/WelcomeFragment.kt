@@ -1,4 +1,4 @@
-package ru.skillbranch.loginandrapp
+package ru.skillbranch.loginandrapp.presentation
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -7,6 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import ru.skillbranch.loginandrapp.MainActivity
+import ru.skillbranch.loginandrapp.R
+import ru.skillbranch.loginandrapp.model.WelcomeViewModel
 
 @Suppress("DEPRECATION")
 class WelcomeFragment : Fragment() {

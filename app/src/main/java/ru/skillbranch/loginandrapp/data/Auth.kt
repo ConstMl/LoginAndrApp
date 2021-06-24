@@ -1,6 +1,6 @@
 package ru.skillbranch.loginandrapp.data
 
-abstract class BaseAuth {
+class Auth {
     lateinit var response: UserData
     private set
 

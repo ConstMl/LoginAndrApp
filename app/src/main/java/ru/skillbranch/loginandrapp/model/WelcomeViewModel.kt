@@ -1,4 +1,4 @@
-package ru.skillbranch.loginandrapp
+package ru.skillbranch.loginandrapp.model
 
 import androidx.lifecycle.ViewModel
 

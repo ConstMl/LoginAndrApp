@@ -6,12 +6,14 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.GlobalContext
+import org.koin.core.context.startKoin
 import org.koin.dsl.module
 import org.koin.dsl.single
 import ru.skillbranch.loginandrapp.R
 import ru.skillbranch.loginandrapp.data.AuthorizationApiService
 import ru.skillbranch.loginandrapp.model.LoginModel
 import ru.skillbranch.loginandrapp.model.viewmodel.LoginViewModel
+import ru.skillbranch.loginandrapp.viewModelLoginKoin
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,14 +25,9 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
         navController = navHostFragment.navController
 
-        val koin = module {
-            LoginViewModel()
-            factory { LoginModel() }
-            single<AuthorizationApiService>()
-        }
-        GlobalContext.startKoin {
+        startKoin {
             androidContext(this@MainActivity)
-            modules(koin)
+            modules(viewModelLoginKoin)
         }
     }
 }

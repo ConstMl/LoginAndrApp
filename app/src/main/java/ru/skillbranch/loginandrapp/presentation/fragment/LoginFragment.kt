@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import org.koin.android.ext.android.get
 import org.koin.android.ext.android.inject
 import ru.skillbranch.loginandrapp.model.viewmodel.LoginViewModel
 import ru.skillbranch.loginandrapp.R
@@ -22,15 +23,13 @@ class LoginFragment : Fragment() {
         fun newInstance() = LoginFragment()
     }
 
-    private lateinit var viewModel: LoginViewModel
+    private val viewModel by inject<LoginViewModel>()
     private lateinit var binding: LoginFragmentBinding
-    private val service: LoginViewModel by inject()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-//        binding = DataBindingUtil.inflate(inflater, R.layout.login_fragment, container, false)
         return inflater.inflate(R.layout.login_fragment, container, false)
     }
 
@@ -41,7 +40,6 @@ class LoginFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
         binding.viewModel = viewModel
     }
 
@@ -51,7 +49,7 @@ class LoginFragment : Fragment() {
         binding.btnSignIn.setOnClickListener{
             Log.d("----->", "{ ${binding.viewModel?.email?.value}, ${binding.viewModel?.password?.value} }")
             Log.d("----->", "{ ${viewModel.email.value}, ${viewModel.password.value} }")
-            service.signIn()
+            viewModel.signIn()
 //            (activity as MainActivity).navController.navigate(R.id.action_loginFragment_to_welcomeFragment)
         }
         binding.btnExit.setOnClickListener{

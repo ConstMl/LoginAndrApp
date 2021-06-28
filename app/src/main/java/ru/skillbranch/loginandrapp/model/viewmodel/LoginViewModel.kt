@@ -7,8 +7,8 @@ import ru.skillbranch.loginandrapp.model.LoginModel
 
 class LoginViewModel(private val loginModel: LoginModel = LoginModel()) : ViewModel() {
 
-    var email = MutableLiveData("")
-    var password = MutableLiveData("")
+    var email = MutableLiveData("qwe1")
+    var password = MutableLiveData("ww")
     var error = MutableLiveData<String>()
     var isLoading = MutableLiveData<Boolean>()
 

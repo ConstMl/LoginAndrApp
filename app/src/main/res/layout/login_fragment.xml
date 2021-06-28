@@ -29,7 +29,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_sign_in_email"
-                android:text="@{viewModel.email}"
+                android:text="@={viewModel.email}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/font_normal_16"
@@ -51,7 +51,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_sign_in_password"
-                android:text="@{viewModel.password}"
+                android:text="@={viewModel.password}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/font_normal_16"
@@ -64,7 +64,7 @@
             android:id="@+id/btn_exit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{() -> viewModel.signIn()}"
+            android:onClick="@{() -> viewModel.exitApp()}"
             android:layout_margin="@dimen/spacing_normal_16"
             android:src="@drawable/ic_baseline_exit_to_app_24"
             app:layout_constraintEnd_toEndOf="parent"
@@ -77,6 +77,7 @@
             android:layout_height="@dimen/button_height_normal_40"
             android:layout_margin="@dimen/spacing_normal_16"
             android:text="@string/sign_in"
+            android:onClick="@{ () -> viewModel.signIn() }"
             app:layout_constraintEnd_toEndOf="@+id/til_sign_in_password"
             app:layout_constraintStart_toStartOf="@+id/til_sign_in_password"
             app:layout_constraintTop_toBottomOf="@+id/til_sign_in_password" />

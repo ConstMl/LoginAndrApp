@@ -1,6 +1,5 @@
 package ru.skillbranch.loginandrapp.data
 
-import ru.skillbranch.loginandrapp.model.UserEmailAuthData
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Query

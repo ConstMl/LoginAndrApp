@@ -1,7 +1,5 @@
 package ru.skillbranch.loginandrapp
 
-import androidx.lifecycle.ViewModel
-import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 import org.koin.dsl.single
 import org.koin.androidx.viewmodel.dsl.viewModel

@@ -5,14 +5,8 @@ import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import org.koin.android.ext.koin.androidContext
-import org.koin.core.context.GlobalContext
 import org.koin.core.context.startKoin
-import org.koin.dsl.module
-import org.koin.dsl.single
 import ru.skillbranch.loginandrapp.R
-import ru.skillbranch.loginandrapp.data.AuthorizationApiService
-import ru.skillbranch.loginandrapp.model.LoginModel
-import ru.skillbranch.loginandrapp.model.viewmodel.LoginViewModel
 import ru.skillbranch.loginandrapp.loginModule
 
 class MainActivity : AppCompatActivity() {

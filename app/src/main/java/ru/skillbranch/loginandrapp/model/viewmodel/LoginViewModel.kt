@@ -8,7 +8,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import ru.skillbranch.loginandrapp.model.LoginModel
 import kotlin.system.exitProcess
 
-class LoginViewModel(private val loginModel: LoginModel = LoginModel()) : ViewModel() {
+class LoginViewModel(private val loginModel: LoginModel) : ViewModel() {
 
     var email = MutableLiveData("")
     var password = MutableLiveData("")

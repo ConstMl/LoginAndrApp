@@ -9,7 +9,7 @@ import ru.skillbranch.loginandrapp.data.AuthorizationApiService
 import ru.skillbranch.loginandrapp.model.LoginModel
 import ru.skillbranch.loginandrapp.model.viewmodel.LoginViewModel
 
-val viewModelLoginKoin = module {
+val loginModule = module {
     viewModel { LoginViewModel(get()) }
     factory { LoginModel() }
     single<AuthorizationApiService>()

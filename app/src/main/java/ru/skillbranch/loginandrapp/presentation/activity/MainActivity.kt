@@ -13,7 +13,7 @@ import ru.skillbranch.loginandrapp.R
 import ru.skillbranch.loginandrapp.data.AuthorizationApiService
 import ru.skillbranch.loginandrapp.model.LoginModel
 import ru.skillbranch.loginandrapp.model.viewmodel.LoginViewModel
-import ru.skillbranch.loginandrapp.viewModelLoginKoin
+import ru.skillbranch.loginandrapp.loginModule
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         startKoin {
             androidContext(this@MainActivity)
-            modules(viewModelLoginKoin)
+            modules(loginModule)
         }
     }
 }

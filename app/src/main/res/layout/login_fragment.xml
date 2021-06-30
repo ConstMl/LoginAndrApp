@@ -7,6 +7,9 @@
         <variable
             name="viewModel"
             type="ru.skillbranch.loginandrapp.model.viewmodel.LoginViewModel" />
+        <variable
+            name="view"
+            type="android.view.View" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -84,6 +87,17 @@
             app:layout_constraintEnd_toEndOf="@+id/til_sign_in_password"
             app:layout_constraintStart_toStartOf="@+id/til_sign_in_password"
             app:layout_constraintTop_toBottomOf="@+id/til_sign_in_password" />
+
+        <ProgressBar
+            android:id="@+id/sign_in_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{viewModel.isLoading ? view.VISIBLE : view.GONE}"
+            style="@android:style/Widget.ProgressBar.Large"
+            android:layout_marginTop="@dimen/spacing_huge_32"
+            app:layout_constraintEnd_toEndOf="@+id/btn_sign_in"
+            app:layout_constraintStart_toStartOf="@+id/btn_sign_in"
+            app:layout_constraintTop_toBottomOf="@+id/btn_sign_in" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -17,9 +17,12 @@
         android:id="@+id/welcomeFragment"
         android:name="ru.skillbranch.loginandrapp.presentation.fragment.WelcomeFragment"
         android:label="welcome_fragment"
-        tools:layout="@layout/welcome_fragment" >
+        tools:layout="@layout/welcome_fragment">
         <action
             android:id="@+id/action_welcomeFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="app://welcome" />
     </fragment>
 </navigation>

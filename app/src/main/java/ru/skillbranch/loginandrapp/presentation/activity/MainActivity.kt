@@ -1,10 +1,10 @@
-package ru.skillbranch.loginandrapp
+package ru.skillbranch.loginandrapp.presentation.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
+import ru.skillbranch.loginandrapp.R
 
 class MainActivity : AppCompatActivity() {
 

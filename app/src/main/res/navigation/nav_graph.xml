@@ -6,7 +6,7 @@
     app:startDestination="@id/loginFragment">
     <fragment
         android:id="@+id/loginFragment"
-        android:name="ru.skillbranch.loginandrapp.presentation.LoginFragment"
+        android:name="ru.skillbranch.loginandrapp.presentation.fragment.LoginFragment"
         android:label="login_fragment"
         tools:layout="@layout/login_fragment" >
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/welcomeFragment"
-        android:name="ru.skillbranch.loginandrapp.presentation.WelcomeFragment"
+        android:name="ru.skillbranch.loginandrapp.presentation.fragment.WelcomeFragment"
         android:label="welcome_fragment"
         tools:layout="@layout/welcome_fragment" >
         <action

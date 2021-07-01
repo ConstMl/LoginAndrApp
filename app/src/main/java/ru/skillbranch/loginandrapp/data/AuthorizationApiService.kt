@@ -19,9 +19,9 @@ interface AuthorizationApiService {
 //    ) : Boolean
 
     suspend fun signIn(email: String?, password: String?) : Boolean {
-        delay(1500)
+        delay(3500)
         Log.d("AuthorizationApiService", "login: $email, pass: $password")
-        return true
+        return email == "email"
     }
 
     companion object SingleAuthorizationApiService : AuthorizationApiService {

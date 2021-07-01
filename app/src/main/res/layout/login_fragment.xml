@@ -7,6 +7,9 @@
         <variable
             name="viewModel"
             type="ru.skillbranch.loginandrapp.model.viewmodel.LoginViewModel" />
+        <variable
+            name="view"
+            type="android.view.View" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,6 +23,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:id="@+id/til_sign_in_email"
             android:hint="@string/e_mail"
+            android:enabled="@{!viewModel.isLoading}"
             android:layout_width="320dp"
             android:layout_height="0dp"
             android:layout_marginTop="120dp"
@@ -42,6 +46,7 @@
             android:id="@+id/til_sign_in_password"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:hint="@string/password"
+            android:enabled="@{!viewModel.isLoading}"
             android:layout_width="320dp"
             android:layout_height="0dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -77,10 +82,22 @@
             android:layout_height="@dimen/button_height_normal_40"
             android:layout_margin="@dimen/spacing_normal_16"
             android:text="@string/sign_in"
-            android:onClick="@{ () -> viewModel.signIn() }"
+            android:onClick="@{ () -> viewModel.onClickSignIn() }"
+            android:enabled="@{!viewModel.isLoading}"
             app:layout_constraintEnd_toEndOf="@+id/til_sign_in_password"
             app:layout_constraintStart_toStartOf="@+id/til_sign_in_password"
             app:layout_constraintTop_toBottomOf="@+id/til_sign_in_password" />
+
+        <ProgressBar
+            android:id="@+id/sign_in_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{viewModel.isLoading ? view.VISIBLE : view.GONE}"
+            style="@android:style/Widget.ProgressBar.Large"
+            android:layout_marginTop="@dimen/spacing_huge_32"
+            app:layout_constraintEnd_toEndOf="@+id/btn_sign_in"
+            app:layout_constraintStart_toStartOf="@+id/btn_sign_in"
+            app:layout_constraintTop_toBottomOf="@+id/btn_sign_in" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

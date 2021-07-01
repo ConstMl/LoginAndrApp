@@ -8,7 +8,7 @@ import ru.skillbranch.loginandrapp.model.LoginModel
 import ru.skillbranch.loginandrapp.model.viewmodel.LoginViewModel
 
 val loginModule = module {
-    viewModel { LoginViewModel(get()) }
+    viewModel { LoginViewModel(get(), get()) }
     factory { LoginModel(AuthorizationApiService.instance) }
     single<AuthorizationApiService>()
 }

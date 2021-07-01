@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import ru.skillbranch.loginandrapp.presentation.activity.MainActivity
 import ru.skillbranch.loginandrapp.R
+import ru.skillbranch.loginandrapp.databinding.WelcomeFragmentBinding
 import ru.skillbranch.loginandrapp.model.viewmodel.WelcomeViewModel
 
 @Suppress("DEPRECATION")
@@ -19,6 +20,7 @@ class WelcomeFragment : Fragment() {
     }
 
     private lateinit var viewModel: WelcomeViewModel
+    private lateinit var binding: WelcomeFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,10 +29,12 @@ class WelcomeFragment : Fragment() {
         return inflater.inflate(R.layout.welcome_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(WelcomeViewModel::class.java)
-        // TODO: Use the ViewModel
+        binding = WelcomeFragmentBinding.bind(view)
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this
     }
 
     override fun onStart() {

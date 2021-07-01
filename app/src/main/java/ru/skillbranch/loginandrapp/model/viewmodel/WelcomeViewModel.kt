@@ -5,6 +5,6 @@ import androidx.lifecycle.ViewModel
 
 class WelcomeViewModel : ViewModel() {
 
-    var login = MutableLiveData<String>("asd")
+    var login = MutableLiveData<String>()
 
 }

@@ -2,6 +2,7 @@ package ru.skillbranch.loginandrapp.presentation.fragment
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -35,6 +36,11 @@ class WelcomeFragment : Fragment() {
         binding = WelcomeFragmentBinding.bind(view)
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
+
+        val login = arguments?.getString("login")
+        if (login != null) {
+            viewModel.login.value = login
+        }
     }
 
     override fun onStart() {

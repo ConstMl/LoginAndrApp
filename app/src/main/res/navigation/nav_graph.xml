@@ -22,7 +22,7 @@
             android:id="@+id/action_welcomeFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
         <deepLink
-            android:id="@+id/deepLink"
+            android:id="@+id/deepLink_loginFragment_to_welcomeFragment"
             app:uri="app://welcome" />
     </fragment>
 </navigation>

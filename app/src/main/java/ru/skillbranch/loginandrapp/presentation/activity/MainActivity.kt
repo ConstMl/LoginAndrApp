@@ -9,19 +9,26 @@ import androidx.navigation.NavDeepLinkRequest
 import androidx.navigation.fragment.NavHostFragment
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.unloadKoinModules
+import org.koin.core.module.Module
+import org.koin.dsl.module
 import ru.skillbranch.loginandrapp.R
 import ru.skillbranch.loginandrapp.data.Navigator
-import ru.skillbranch.loginandrapp.navModule
 
 class MainActivity : AppCompatActivity(), Navigator {
 
     lateinit var navController: NavController
+    private lateinit var navModule: Module
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
         navController = navHostFragment.navController
+
+        navModule = module {
+            single<Navigator> { this@MainActivity }
+        }
         loadKoinModules(navModule)
     }
 
@@ -35,8 +42,6 @@ class MainActivity : AppCompatActivity(), Navigator {
             val request = NavDeepLinkRequest.Builder
                 .fromUri(url.toUri())
                 .build()
-            val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
-            val navController: NavController = navHostFragment.navController
             navController.navigate(request)
         } else {
             val text = "could not navigate to $url"

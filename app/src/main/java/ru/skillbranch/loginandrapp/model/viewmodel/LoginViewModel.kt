@@ -18,16 +18,16 @@ import kotlin.system.exitProcess
 
 class LoginViewModel(private val loginModel: LoginModel, private val navigator: Navigator) : ViewModel() {
 
-    var email = MutableLiveData("")
+    var login = MutableLiveData("")
     var password = MutableLiveData("")
     var error = MutableLiveData<String>()
     var isLoading = MutableLiveData<Boolean>(false)
 
     fun onClickSignIn() { // suspend
-        Log.d("onClickSignIn: ", "login: ${email.value}, pass: ${password.value}")
+        Log.d("onClickSignIn: ", "login: ${login.value}, pass: ${password.value}")
         viewModelScope.launch(Dispatchers.Main) {
             isLoading.value = true
-            val res = loginModel.signIn(email = email.value, password = password.value)
+            val res = loginModel.signIn(login = login.value, password = password.value)
             if (res) {
                 navigator.navigate("app://welcome", Bundle())
             } else {

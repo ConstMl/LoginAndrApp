@@ -21,8 +21,8 @@
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:id="@+id/til_sign_in_email"
-            android:hint="@string/e_mail"
+            android:id="@+id/til_sign_in_login"
+            android:hint="@string/login"
             android:enabled="@{!viewModel.isLoading}"
             android:layout_width="320dp"
             android:layout_height="0dp"
@@ -32,12 +32,12 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_sign_in_email"
-                android:text="@={viewModel.email}"
+                android:id="@+id/et_sign_in_login"
+                android:text="@={viewModel.login}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/font_normal_16"
-                android:inputType="textEmailAddress"
+                android:inputType="textPersonName"
                 android:maxLength="30">
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
@@ -52,7 +52,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="@dimen/spacing_small_8"
-            app:layout_constraintTop_toBottomOf="@+id/til_sign_in_email">
+            app:layout_constraintTop_toBottomOf="@+id/til_sign_in_login">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_sign_in_password"

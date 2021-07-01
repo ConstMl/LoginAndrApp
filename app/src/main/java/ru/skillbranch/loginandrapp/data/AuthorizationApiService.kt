@@ -8,20 +8,10 @@ import retrofit2.http.Query
 import retrofit2.http.*
 
 interface AuthorizationApiService {
-//    val accessToken: String
-//    suspend fun signIn(data: UserEmailAuthData) : Boolean // set access token
-//    suspend fun isSign(data: UserEmailAuthData) : Boolean
-
-//    @POST("user/auth/local")
-//    suspend fun signIn(
-//        @Query("email") mail: String?,
-//        @Query("password") password: String?
-//    ) : Boolean
-
-    suspend fun signIn(email: String?, password: String?) : Boolean {
-        delay(3500)
-        Log.d("AuthorizationApiService", "login: $email, pass: $password")
-        return email == "email"
+    suspend fun signIn(login: String?, password: String?) : Boolean {
+        delay(1500)
+        Log.d("AuthorizationApiService", "login: $login, pass: $password")
+        return login == "login"
     }
 
     companion object SingleAuthorizationApiService : AuthorizationApiService {

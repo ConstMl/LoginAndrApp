@@ -1,6 +1,7 @@
 package ru.skillbranch.loginandrapp.model.viewmodel
 
 import android.app.Application
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -30,14 +31,10 @@ class LoginViewModel(private val loginModel: LoginModel, private val navigator: 
             if (res) {
                 navigator.navigate("app://welcome", Bundle())
             } else {
-//                val text = "Sign in failed"
-//                val duration = Toast.LENGTH_SHORT
-//                val toast = Toast.makeText(, text, duration) //TODO how get applicationContext
-//                toast.show()
+                error.value = "Sign in failed"
             }
             isLoading.value = false
         }
-//        this.loginModel.signIn(email = email.value, password = password.value)
     }
 
     fun exitApp(): Unit = exitProcess(0)

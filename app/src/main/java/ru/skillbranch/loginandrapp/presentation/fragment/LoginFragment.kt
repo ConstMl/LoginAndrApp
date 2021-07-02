@@ -12,7 +12,6 @@ import ru.skillbranch.loginandrapp.model.viewmodel.LoginViewModel
 import ru.skillbranch.loginandrapp.R
 import ru.skillbranch.loginandrapp.databinding.LoginFragmentBinding
 
-@Suppress("DEPRECATION")
 class LoginFragment : Fragment() {
 
     companion object {

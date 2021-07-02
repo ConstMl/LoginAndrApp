@@ -12,21 +12,10 @@ import ru.skillbranch.loginandrapp.model.viewmodel.LoginViewModel
 import ru.skillbranch.loginandrapp.R
 import ru.skillbranch.loginandrapp.databinding.LoginFragmentBinding
 
-class LoginFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = LoginFragment()
-    }
+class LoginFragment : Fragment(R.layout.login_fragment) {
 
     private val viewModel by inject<LoginViewModel>()
     private lateinit var binding: LoginFragmentBinding
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.login_fragment, container, false)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

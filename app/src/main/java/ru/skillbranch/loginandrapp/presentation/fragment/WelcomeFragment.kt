@@ -13,23 +13,12 @@ import ru.skillbranch.loginandrapp.R
 import ru.skillbranch.loginandrapp.databinding.WelcomeFragmentBinding
 import ru.skillbranch.loginandrapp.model.viewmodel.WelcomeViewModel
 
-class WelcomeFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = WelcomeFragment()
-    }
+class WelcomeFragment : Fragment(R.layout.welcome_fragment) {
 
     private val viewModel by inject<WelcomeViewModel> {
         parametersOf(arguments?.getString("login"))
     }
     private lateinit var binding: WelcomeFragmentBinding
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.welcome_fragment, container, false)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

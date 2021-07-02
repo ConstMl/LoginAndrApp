@@ -26,7 +26,7 @@
         <TextView
             android:textAlignment="center"
             android:textSize="@dimen/font_large_24"
-            android:text='@{viewModel.login != null ? "Welcome, " + viewModel.login : "Welcome"}'
+            android:text='@{viewModel.welcomeText}'
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"

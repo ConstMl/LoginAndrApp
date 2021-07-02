@@ -1,27 +1,27 @@
 package ru.skillbranch.loginandrapp.presentation.fragment
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import org.koin.android.ext.android.inject
+import org.koin.core.parameter.parametersOf
 import ru.skillbranch.loginandrapp.presentation.activity.MainActivity
 import ru.skillbranch.loginandrapp.R
 import ru.skillbranch.loginandrapp.databinding.WelcomeFragmentBinding
 import ru.skillbranch.loginandrapp.model.viewmodel.WelcomeViewModel
 
-@Suppress("DEPRECATION")
 class WelcomeFragment : Fragment() {
 
     companion object {
         fun newInstance() = WelcomeFragment()
     }
 
-    private val viewModel by inject<WelcomeViewModel>()
+    private val viewModel by inject<WelcomeViewModel> {
+        parametersOf(arguments?.getString("login"))
+    }
     private lateinit var binding: WelcomeFragmentBinding
 
     override fun onCreateView(
@@ -36,11 +36,6 @@ class WelcomeFragment : Fragment() {
         binding = WelcomeFragmentBinding.bind(view)
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
-
-        val login = arguments?.getString("login")
-        if (login != null) {
-            viewModel.login.value = login
-        }
     }
 
     override fun onStart() {

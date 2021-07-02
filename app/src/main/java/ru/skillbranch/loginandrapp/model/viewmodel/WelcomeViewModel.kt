@@ -1,10 +1,13 @@
 package ru.skillbranch.loginandrapp.model.viewmodel
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class WelcomeViewModel : ViewModel() {
+class WelcomeViewModel(login: String) : ViewModel() {
 
-    var login = MutableLiveData<String>()
+    var welcomeText: String? = null
+
+    init {
+        welcomeText = "Welcome, $login"
+    }
 
 }

@@ -15,5 +15,5 @@ val loginModule = module {
 }
 
 val welcomeModule = module {
-    viewModel { WelcomeViewModel() }
+    viewModel { (login: String) -> WelcomeViewModel(login) }
 }

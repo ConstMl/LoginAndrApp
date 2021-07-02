@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import org.koin.android.ext.android.inject
 import ru.skillbranch.loginandrapp.presentation.activity.MainActivity
 import ru.skillbranch.loginandrapp.R
 import ru.skillbranch.loginandrapp.databinding.WelcomeFragmentBinding
@@ -20,7 +21,7 @@ class WelcomeFragment : Fragment() {
         fun newInstance() = WelcomeFragment()
     }
 
-    private lateinit var viewModel: WelcomeViewModel
+    private val viewModel by inject<WelcomeViewModel>()
     private lateinit var binding: WelcomeFragmentBinding
 
     override fun onCreateView(
@@ -32,7 +33,6 @@ class WelcomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProvider(this).get(WelcomeViewModel::class.java)
         binding = WelcomeFragmentBinding.bind(view)
         binding.viewModel = viewModel
         binding.lifecycleOwner = this

@@ -1,9 +1,9 @@
-package ru.skillbranch.loginandrapp.model
+package ru.skillbranch.domain
 
-import ru.skillbranch.loginandrapp.data.AuthorizationApiService
+import ru.skillbranch.data.AuthorizationApiService
 
 class LoginModel(
-    private val authorizationService: AuthorizationApiService
+    private val authorizationService: ru.skillbranch.data.AuthorizationApiService
 ) {
     suspend fun signIn(login: String? = "", password: String? = ""): Boolean {
         return authorizationService.signIn(login, password)

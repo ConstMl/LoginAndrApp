@@ -1,4 +1,4 @@
-package ru.skillbranch.loginandrapp.data
+package ru.skillbranch.data
 
 interface AuthorizationApiService {
     suspend fun signIn(login: String?, password: String?) : Boolean

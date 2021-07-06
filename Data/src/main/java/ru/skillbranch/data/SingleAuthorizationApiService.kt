@@ -1,4 +1,4 @@
-package ru.skillbranch.loginandrapp.data
+package ru.skillbranch.data
 
 import android.util.Log
 import kotlinx.coroutines.delay

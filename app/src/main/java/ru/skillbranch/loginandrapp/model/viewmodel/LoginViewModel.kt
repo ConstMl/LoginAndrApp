@@ -8,10 +8,10 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import ru.skillbranch.loginandrapp.data.Navigator
-import ru.skillbranch.loginandrapp.model.LoginModel
+import ru.skillbranch.domain.LoginModel
 import kotlin.system.exitProcess
 
-class LoginViewModel(private val loginModel: LoginModel, private val navigator: Navigator) : ViewModel() {
+class LoginViewModel(private val loginModel: ru.skillbranch.domain.LoginModel, private val navigator: Navigator) : ViewModel() {
 
     var login = MutableLiveData("")
     var password = MutableLiveData("")

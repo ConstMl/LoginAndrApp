@@ -37,6 +37,8 @@ android {
 }
 
 dependencies {
+    implementation project(path: ':Data')
+    implementation project(path: ':Domain')
     def koin_version = "3.1.1"
     implementation "io.insert-koin:koin-core:$koin_version"
     // Koin main features for Android (Scope,ViewModel ...)

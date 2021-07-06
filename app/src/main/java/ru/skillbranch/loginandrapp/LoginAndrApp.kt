@@ -10,6 +10,7 @@ class LoginAndrApp: Application() {
         startKoin {
             androidContext(this@LoginAndrApp)
             modules(
+                authServiceModule,
                 loginModule,
                 welcomeModule
             )

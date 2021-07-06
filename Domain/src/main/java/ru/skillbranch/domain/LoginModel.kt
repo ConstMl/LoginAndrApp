@@ -1,11 +1,11 @@
 package ru.skillbranch.domain
 
-import ru.skillbranch.data.AuthorizationApiService
+import ru.skillbranch.data.interfaces.IAuthorizationRepository
 
 class LoginModel(
-    private val authorizationService: ru.skillbranch.data.AuthorizationApiService
+    private val authorizationRepository: IAuthorizationRepository
 ) {
     suspend fun signIn(login: String? = "", password: String? = ""): Boolean {
-        return authorizationService.signIn(login, password)
+        return authorizationRepository.signIn(login, password)
     }
 }

@@ -2,18 +2,19 @@ package ru.skillbranch.data
 
 import android.util.Log
 import kotlinx.coroutines.delay
+import ru.skillbranch.data.interfaces.IAuthorizationApiService
 
-class SingleAuthorizationApiService : AuthorizationApiService {
+class SingleIAuthorizationApiService : IAuthorizationApiService {
 
     companion object {
-        private var singleAuthorizationApiService: SingleAuthorizationApiService? = null
-        val instance: AuthorizationApiService
+        private var singleAuthorizationApiService: SingleIAuthorizationApiService? = null
+        val instance: IAuthorizationApiService
             get() {
                 if (singleAuthorizationApiService == null) singleAuthorizationApiService = create()
                 return singleAuthorizationApiService!!
             }
-        private fun create(): SingleAuthorizationApiService {
-            return SingleAuthorizationApiService()
+        private fun create(): SingleIAuthorizationApiService {
+            return SingleIAuthorizationApiService()
         }
     }
 

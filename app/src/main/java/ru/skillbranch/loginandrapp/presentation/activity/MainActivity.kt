@@ -6,7 +6,9 @@ import android.widget.Toast
 import androidx.core.net.toUri
 import androidx.navigation.NavController
 import androidx.navigation.NavDeepLinkRequest
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.NavHostFragment
+import org.koin.core.component.getScopeId
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.unloadKoinModules
 import org.koin.core.module.Module
@@ -39,10 +41,10 @@ class MainActivity : AppCompatActivity(), Navigator {
 
     override fun navigate(url: String, args: Bundle?) {
         if (url == "app://welcome") {
-            val request = NavDeepLinkRequest.Builder
-                .fromUri(url.toUri())
-                .build()
-            navController.navigate(request)
+//            val request = NavDeepLinkRequest.Builder
+//                .fromUri(url.toUri())
+//                .build()
+            navController.navigate(R.id.welcomeFragment, args)
         } else {
             val text = "could not navigate to $url"
             val duration = Toast.LENGTH_SHORT

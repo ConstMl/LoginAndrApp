@@ -9,7 +9,10 @@ class LoginAndrApp: Application() {
         super.onCreate()
         startKoin {
             androidContext(this@LoginAndrApp)
-            modules(loginModule)
+            modules(
+                loginModule,
+                welcomeModule
+            )
         }
     }
 }

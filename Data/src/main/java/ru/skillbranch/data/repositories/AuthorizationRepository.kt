@@ -5,7 +5,7 @@ import ru.skillbranch.domain.interfaces.IAuthorizationRepository
 
 class AuthorizationRepository(
     private val authorizationApiService: IAuthorizationApiService
-    ) : ru.skillbranch.domain.interfaces.IAuthorizationRepository {
+    ) : IAuthorizationRepository {
 
     override suspend fun signIn(login: String?, password: String?): Boolean {
         return authorizationApiService.signIn(login, password)

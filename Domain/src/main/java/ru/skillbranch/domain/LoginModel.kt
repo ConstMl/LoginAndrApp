@@ -1,6 +1,6 @@
 package ru.skillbranch.domain
 
-import ru.skillbranch.data.interfaces.IAuthorizationRepository
+import ru.skillbranch.domain.interfaces.IAuthorizationRepository
 
 class LoginModel(
     private val authorizationRepository: IAuthorizationRepository

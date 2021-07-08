@@ -4,7 +4,7 @@ import org.koin.dsl.module
 import org.koin.androidx.viewmodel.dsl.viewModel
 import ru.skillbranch.data.interfaces.IAuthorizationApiService
 import ru.skillbranch.data.SingleIAuthorizationApiService
-import ru.skillbranch.data.interfaces.IAuthorizationRepository
+import ru.skillbranch.domain.interfaces.IAuthorizationRepository
 import ru.skillbranch.data.repositories.AuthorizationRepository
 import ru.skillbranch.domain.LoginModel
 import ru.skillbranch.loginandrapp.model.viewmodel.LoginViewModel
@@ -23,3 +23,7 @@ val welcomeModule = module {
 val authServiceModule = module {
     single<IAuthorizationApiService> { SingleIAuthorizationApiService() }
 }
+
+// val authServiceModule = module {
+//    single<IAuthorizationApiService> { get<SingleIAuthorizationApiService>() }
+//}

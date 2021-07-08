@@ -1,4 +1,4 @@
-package ru.skillbranch.data.interfaces
+package ru.skillbranch.domain.interfaces
 
 interface IAuthorizationRepository {
     suspend fun signIn(login: String?, password: String?) : Boolean

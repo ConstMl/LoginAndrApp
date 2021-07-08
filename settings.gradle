@@ -1,2 +1,4 @@
 rootProject.name = "LoginAndrApp"
 include ':app'
+include ':Data'
+include ':Domain'

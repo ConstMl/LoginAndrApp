@@ -10,6 +10,8 @@ class LoginAndrApp: Application() {
         startKoin {
             androidContext(this@LoginAndrApp)
             modules(
+                retrofitProviderModule,
+                retrofitAuthorizationServiceModule,
                 authServiceModule,
                 loginModule,
                 welcomeModule

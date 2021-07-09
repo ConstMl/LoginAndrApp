@@ -22,7 +22,7 @@ class LoginViewModel(private val loginModel: ru.skillbranch.domain.LoginModel, p
         Log.d("onClickSignIn: ", "login: ${login.value}, pass: ${password.value}")
         viewModelScope.launch(Dispatchers.Main) {
             isLoading.value = true
-            val res = loginModel.signIn(login = login.value, password = password.value)
+            val (res, token) = loginModel.signIn(login = login.value, password = password.value)
             if (res) {
                 val bundle = Bundle()
                 bundle.putString("login", login.value)

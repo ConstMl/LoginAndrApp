@@ -5,6 +5,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 import ru.skillbranch.data.interfaces.IRetrofitProvider
 
 // нужен ли интерфейс, если в kotlin есть тип object (singleton) ?
+// в таком случае получается не нужна регистрация в koin
+// или сделать RetrofitProvider обычным классом?
 object RetrofitProvider : IRetrofitProvider {
     private var retrofit: Retrofit? = null
 

@@ -4,7 +4,7 @@ import android.util.Log
 import kotlinx.coroutines.delay
 import ru.skillbranch.data.interfaces.IAuthorizationApiService
 
-class SingleAuthorizationApiService : IAuthorizationApiService {
+class AuthorizationApiService : IAuthorizationApiService {
 
     override suspend fun signIn(login: String?, password: String?): Boolean {
         delay(1500)

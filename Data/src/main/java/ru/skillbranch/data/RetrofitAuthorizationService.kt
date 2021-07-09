@@ -12,7 +12,7 @@ class RetrofitAuthorizationService : IAuthorizationApiService {
     override suspend fun signIn(
         @Query("email") login: String?,
         @Query("password") password: String?
-    ): Boolean {
+    ): Pair<Boolean, String> {
         TODO("Not yet implemented")
     }
 

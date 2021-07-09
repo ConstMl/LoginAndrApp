@@ -7,7 +7,7 @@ class AuthorizationRepository(
     private val authorizationApiService: IAuthorizationApiService
     ) : IAuthorizationRepository {
 
-    override suspend fun signIn(login: String?, password: String?): Boolean {
+    override suspend fun signIn(login: String?, password: String?) : Pair<Boolean, String> {
         return authorizationApiService.signIn(login, password)
     }
 

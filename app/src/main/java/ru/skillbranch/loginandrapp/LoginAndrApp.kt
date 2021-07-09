@@ -11,6 +11,7 @@ class LoginAndrApp: Application() {
             androidContext(this@LoginAndrApp)
             modules(
                 retrofitProviderModule,
+                retrofitAuthorizationServiceModule,
                 authServiceModule,
                 loginModule,
                 welcomeModule

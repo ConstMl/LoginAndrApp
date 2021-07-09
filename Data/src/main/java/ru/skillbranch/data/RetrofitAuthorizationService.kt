@@ -1,19 +1,16 @@
 package ru.skillbranch.data
 
-import ru.skillbranch.data.interfaces.IAuthorizationApiService
+import android.util.Log
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Query
 import retrofit2.http.*
+import ru.skillbranch.data.interfaces.IRetrofitAuthorizationApiService
 
-class RetrofitAuthorizationService : IAuthorizationApiService {
+class RetrofitAuthorizationService : IRetrofitAuthorizationApiService {
 
-    @POST("user/auth/local")
-    override suspend fun signIn(
-        @Query("email") login: String?,
-        @Query("password") password: String?
-    ): Pair<Boolean, String> {
-        TODO("Not yet implemented")
+    override suspend fun signIn(login: String?, password: String?): Pair<Boolean, String> {
+        return Pair(login == "log", "") // вернуть ответ от сервера
     }
 
 }

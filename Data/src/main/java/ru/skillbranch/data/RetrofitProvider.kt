@@ -6,8 +6,8 @@ import ru.skillbranch.data.interfaces.IRetrofitProvider
 
 // нужен ли интерфейс, если в kotlin есть тип object (singleton) ?
 // в таком случае получается не нужна регистрация в koin
-// или сделать RetrofitProvider обычным классом?
-object RetrofitProvider : IRetrofitProvider {
+// или сделать RetrofitProvider обычным классом? // object RetrofitProvider
+class RetrofitProvider : IRetrofitProvider {
     private var retrofit: Retrofit? = null
 
     override fun getClient(baseUrl: String): Retrofit {

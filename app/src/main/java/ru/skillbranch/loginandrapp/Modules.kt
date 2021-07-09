@@ -4,7 +4,9 @@ import org.koin.dsl.module
 import org.koin.androidx.viewmodel.dsl.viewModel
 import ru.skillbranch.data.interfaces.IAuthorizationApiService
 import ru.skillbranch.data.AuthorizationApiService
+import ru.skillbranch.data.RetrofitAuthorizationService
 import ru.skillbranch.data.RetrofitProvider
+import ru.skillbranch.data.interfaces.IRetrofitAuthorizationApiService
 import ru.skillbranch.data.interfaces.IRetrofitProvider
 import ru.skillbranch.domain.interfaces.IAuthorizationRepository
 import ru.skillbranch.data.repositories.AuthorizationRepository
@@ -23,11 +25,16 @@ val welcomeModule = module {
 }
 
 val authServiceModule = module {
-    single<IAuthorizationApiService> { AuthorizationApiService() }
+//    single<IAuthorizationApiService> { AuthorizationApiService() }
+    single<IAuthorizationApiService> { get<IRetrofitProvider>().getClient(baseUrlLink).create(IRetrofitAuthorizationApiService::class.java) }
+}
+
+val retrofitAuthorizationServiceModule = module {
+    single<IRetrofitAuthorizationApiService> { RetrofitAuthorizationService() }
 }
 
 val retrofitProviderModule = module {
-    single<IRetrofitProvider> { RetrofitProvider }
+    single<IRetrofitProvider> { RetrofitProvider() }
 }
 
 // val authServiceModule = module {
